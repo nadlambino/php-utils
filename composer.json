@@ -3,6 +3,7 @@
     "description": "Collection of PHP utility functions.",
     "type": "library",
     "require": {
+        "php": "8.3",
         "inspira/contracts": "dev-master"
     },
     "license": "MIT",
