@@ -52,7 +52,7 @@ if (!function_exists('is_multi_array')) {
 if (!function_exists('camel_to_snake')) {
 	function camel_to_snake(string $string): string
 	{
-		return preg_replace('/([a-z])([A-Z])/', '$1_$2', $string);
+		return strtolower(preg_replace('/([a-z])([A-Z])/', '$1_$2', $string));
 	}
 }
 
