@@ -48,3 +48,17 @@ if (!function_exists('is_multi_array')) {
 			}, true);
 	}
 }
+
+if (!function_exists('camel_to_snake')) {
+	function camel_to_snake(string $string): string
+	{
+		return preg_replace('/([a-z])([A-Z])/', '$1_$2', $string);
+	}
+}
+
+if (!function_exists('snake_to_camel')) {
+	function snake_to_camel(string $string): string
+	{
+		return lcfirst(str_replace('_', '', ucwords($string, '_')));
+	}
+}
