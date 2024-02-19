@@ -56,6 +56,13 @@ if (!function_exists('camel_to_snake')) {
 	}
 }
 
+if (!function_exists('snake_to_camel')) {
+	function snake_to_camel(string $string): string
+	{
+		return lcfirst(str_replace('_', '', ucwords($string, '_')));
+	}
+}
+
 if (!function_exists('camel_to_kebab')) {
 	function camel_to_kebab(string $string): string
 	{
@@ -63,10 +70,10 @@ if (!function_exists('camel_to_kebab')) {
 	}
 }
 
-if (!function_exists('snake_to_camel')) {
-	function snake_to_camel(string $string): string
+if (!function_exists('kebab_to_camel')) {
+	function kebab_to_camel(string $string): string
 	{
-		return lcfirst(str_replace('_', '', ucwords($string, '_')));
+		return lcfirst(ucwords($string, '-'));
 	}
 }
 
