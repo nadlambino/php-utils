@@ -56,6 +56,13 @@ if (!function_exists('camel_to_snake')) {
 	}
 }
 
+if (!function_exists('camel_to_kebab')) {
+	function camel_to_kebab(string $string): string
+	{
+		return strtolower(preg_replace('/([a-z])([A-Z])/', '$1-$2', $string));
+	}
+}
+
 if (!function_exists('snake_to_camel')) {
 	function snake_to_camel(string $string): string
 	{
