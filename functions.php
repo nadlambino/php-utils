@@ -62,3 +62,40 @@ if (!function_exists('snake_to_camel')) {
 		return lcfirst(str_replace('_', '', ucwords($string, '_')));
 	}
 }
+
+if (!function_exists('class_basename')) {
+	function class_basename(string $class): string
+	{
+		return basename(str_replace('\\', '/', $class));
+	}
+}
+
+if (!function_exists('normalize_whitespace')) {
+	function normalize_whitespace(string $string): string
+	{
+		return preg_replace('/\s+/', ' ', trim($string));
+	}
+}
+
+if (!function_exists('set_type')) {
+	function set_type(mixed $value, string $type)
+	{
+		settype($value, $type);
+
+		return $value;
+	}
+}
+
+if (!function_exists('get_traits')) {
+	function get_traits(string $class): array
+	{
+		$traits = class_uses($class);
+		$parent = get_parent_class($class);
+
+		if ($parent !== false) {
+			$traits = [...$traits, ...get_traits($parent)];
+		}
+
+		return $traits;
+	}
+}
