@@ -73,6 +73,15 @@ if (!function_exists('camel_to_kebab')) {
 if (!function_exists('kebab_to_camel')) {
 	function kebab_to_camel(string $string): string
 	{
+		$string = str_replace('-', '', ucwords($string, '-'));
+
+		return lcfirst($string);
+	}
+}
+
+if (!function_exists('kebab_to_pascal')) {
+	function kebab_to_pascal(string $string): string
+	{
 		return str_replace('-', '', ucwords($string, '-'));
 	}
 }
