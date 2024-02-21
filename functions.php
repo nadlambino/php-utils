@@ -86,6 +86,13 @@ if (!function_exists('kebab_to_pascal')) {
 	}
 }
 
+if (!function_exists('pascal_to_kebab')) {
+	function pascal_to_kebab(string $string): string
+	{
+		return strtolower(preg_replace('/([a-z])([A-Z])/', '$1-$2', $string));
+	}
+}
+
 if (!function_exists('class_basename')) {
 	function class_basename(string $class): string
 	{
