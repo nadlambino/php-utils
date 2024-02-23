@@ -69,6 +69,12 @@ function flatten(array $array): array
 	return $result;
 }
 
+/**
+ * Checks if it is an array of arrays.
+ *
+ * @param array $array
+ * @return bool
+ */
 function is_array_collection(array $array): bool
 {
 	return count($array) > 0 && array_reduce($array, function ($carry, $item) {
@@ -76,6 +82,13 @@ function is_array_collection(array $array): bool
 		}, true);
 }
 
+/**
+ * Implodes an array and ensure that extra glues are trimmed.
+ *
+ * @param string $glue
+ * @param array $array
+ * @return string
+ */
 function trimplode(string $glue, array $array): string
 {
 	return trim(implode($glue, $array), $glue);

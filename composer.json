@@ -13,6 +13,7 @@
         },
         "files": [
             "src/array.php",
+            "src/string.php",
             "src/functions.php"
         ]
     },
