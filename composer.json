@@ -9,10 +9,11 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Inspira\\Utils\\": "."
+            "Inspira\\Utils\\": "src"
         },
         "files": [
-            "functions.php"
+            "src/array.php",
+            "src/functions.php"
         ]
     },
     "authors": [
@@ -21,5 +22,14 @@
             "email": "50892397+nadlambino@users.noreply.github.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require-dev": {
+        "pestphp/pest": "3.x-dev",
+        "symfony/var-dumper": "7.1.x-dev"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
 }

@@ -1,6 +1,10 @@
 <?php
 
+namespace Inspira\Utils;
+
 use Inspira\Contracts\Arrayable;
+use Iterator;
+use Stringable;
 
 if (!function_exists('stringable')) {
 	function stringable(mixed $data): bool
