@@ -6,18 +6,38 @@ use Inspira\Contracts\Arrayable;
 use Iterator;
 use Stringable;
 
+/**
+ * Get the base class name of a class.
+ *
+ * @param string $class
+ * @return string
+ */
 function class_basename(string $class): string
 {
 	return basename(str_replace('\\', '/', $class));
 }
 
-function set_type(mixed $value, string $type)
+/**
+ * Set the type of variable.
+ *
+ * @param mixed $value
+ * @param string $type
+ * @return mixed
+ */
+function set_type(mixed $value, string $type): mixed
 {
 	settype($value, $type);
 
 	return $value;
 }
 
+/**
+ * Get the traits of a class.
+ *
+ * @param string $class
+ * @param bool $recursive
+ * @return array
+ */
 function get_traits(string $class, bool $recursive = true): array
 {
 	$traits = class_uses($class);
