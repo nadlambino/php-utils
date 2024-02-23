@@ -16,6 +16,11 @@
             "src/functions.php"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Inspira\\Utils\\Tests\\": "tests"
+        }
+    },
     "authors": [
         {
             "name": "Ronald Lambino",
